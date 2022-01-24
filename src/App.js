@@ -76,6 +76,9 @@ export default class App extends Component {
                 displayText = 'ERROR: Speech was cancelled or could not be recognized. Ensure your microphone is working properly.';
             }
 
+            console.log('resultの結果全体をjson形式(文字列)で取得:' + result.json);
+            console.log('RecognitionStatusのみ取得:' +  JSON.parse(result.json)['RecognitionStatus'])
+            
             this.setState({
                 displayText: fileInfo + displayText
             });
